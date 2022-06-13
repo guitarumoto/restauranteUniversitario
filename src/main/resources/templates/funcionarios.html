@@ -6,11 +6,12 @@
   <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
 </head>
 <body>
+<div th:insert="navbar :: navbar">  </div>
+
 <div class="container-fluid text-center">
   <h2>Lista de Funcionários</h2>
   <div class="m-2">
     <a class="h3" th:href="@{/funcionarios/new}">Adicionar novo Funcionário</a>
-    <a class="h3" th:ref="@{}">Fazer Pedido Para Aluno</a>
   </div>
   <div th:if="${message}" class="alert-success text-center">
     [[${message}]]

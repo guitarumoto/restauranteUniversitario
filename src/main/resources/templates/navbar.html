@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>NavigationBar</title>
+
+</head>
+<body>
+
+<nav th:fragment="navbar" class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" th:href="@{/}">RU</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a class="nav-link" th:href="@{/funcionarios}">Lista de Funcionários</a></li>
+      <li><a class="nav-link" th:href="@{/funcionarios}">Pedido Aluno</a></li>
+    </ul>
+  </div>
+</nav>
+
+</body>
+</html>

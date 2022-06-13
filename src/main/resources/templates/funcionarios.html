@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Funcionários</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container-fluid text-center">
+  <h2>Lista de Funcionários</h2>
+  <div class="m-2">
+    <a class="h3" th:href="@{/funcionarios/new}">Adicionar novo Funcionário</a>
+    <a class="h3" th:ref="@{}">Fazer Pedido Para Aluno</a>
+  </div>
+  <div th:if="${message}" class="alert-success text-center">
+    [[${message}]]
+  </div>
+  <div>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Nome</th>
+        <th>Login</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="funcionario : ${listFuncionarios}">
+        <tr>
+          <td>[[${funcionario.id}]]</td>
+          <td>[[${funcionario.email}]]</td>
+          <td>[[${funcionario.nome}]]</td>
+          <td>[[${funcionario.login}]]</td>
+          <td>
+            <a class="h4 mr-3 " th:href="@{'/funcionarios/edit/' + ${funcionario.id}}">Edit</a>
+            <a class="h4" th:href="@{'/funcionarios/delete/' + ${funcionario.id}}">Delete</a>
+          </td>
+        </tr>
+
+      </th:block>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+</body>
+</html>

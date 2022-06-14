@@ -22,4 +22,10 @@ public class Pedido {
 
     @Column(nullable = true, unique = true, length = 15)
     private Integer alunoRa;
+
+    @Column(nullable = false, unique = true, length = 15)
+    private Integer externoCpf;
+
+    @Column(nullable = false, unique = true, length = 15)
+    private Integer externoRg;
 }

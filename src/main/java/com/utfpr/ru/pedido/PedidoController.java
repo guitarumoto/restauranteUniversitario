@@ -28,6 +28,7 @@ public class PedidoController {
     @PostMapping("/pedidos/save")
     public String savePedido(Pedido pedido, RedirectAttributes ra) {
         Pedido pedidoExterno = service.cpfVerification(pedido);
+        pedido.setClienteId(pedidoExterno.getClienteId());
         if(pedidoExterno.getClienteId() != null){
             pedido.setClienteId(pedidoExterno.getClienteId());
             service.save(pedido);

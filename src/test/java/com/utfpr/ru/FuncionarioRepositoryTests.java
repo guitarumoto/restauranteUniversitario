@@ -48,8 +48,8 @@ public class FuncionarioRepositoryTests {
         funcionario.setSenha("aaaaa");
         repo.save(funcionario);
 
-        Funcionario updatedUser = repo.findById(funcionarioId).get();
-        Assertions.assertThat(updatedUser.getSenha()).isEqualTo("aaaaa");
+        Funcionario updatedFuncionario = repo.findById(funcionarioId).get();
+        Assertions.assertThat(updatedFuncionario.getSenha()).isEqualTo("aaaaa");
     }
 
     @Test

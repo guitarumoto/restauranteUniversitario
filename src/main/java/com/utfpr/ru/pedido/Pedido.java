@@ -28,4 +28,61 @@ public class Pedido {
 
     @Column(nullable = false, unique = true, length = 15)
     private Integer externoRg;
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Date getDataPedido() {
+        return dataPedido;
+    }
+
+    public void setDataPedido(Date dataPedido) {
+        this.dataPedido = dataPedido;
+    }
+
+    public Integer getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(Integer clienteId) {
+        this.clienteId = clienteId;
+    }
+
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
+    }
+
+    public Integer getAlunoRa() {
+        return alunoRa;
+    }
+
+    public void setAlunoRa(Integer alunoRa) {
+        this.alunoRa = alunoRa;
+    }
+
+    public Integer getExternoCpf() {
+        return externoCpf;
+    }
+
+    public void setExternoCpf(Integer externoCpf) {
+        this.externoCpf = externoCpf;
+    }
+
+    public Integer getExternoRg() {
+        return externoRg;
+    }
+
+    public void setExternoRg(Integer externoRg) {
+        this.externoRg = externoRg;
+    }
 }

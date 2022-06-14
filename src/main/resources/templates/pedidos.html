@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Pedidos</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div th:insert="navbar :: navbar">  </div>
+
+<div class="container-fluid text-center">
+  <h2>Lista de Pedidos</h2>
+<!--  <div class="m-2">-->
+<!--    <a class="h3" th:href="@{/pedidos/new}">Adicionar novo Pedido</a>-->
+<!--  </div>-->
+  <div th:if="${message}" class="alert-success text-center">
+    [[${message}]]
+  </div>
+  <div>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>ID Pedido</th>
+        <th>Data Pedido</th>
+        <th>Nome Cliente</th>
+        <th>Email</th>
+        <th>RA</th>
+        <th>RG</th>
+        <th>CPF</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="pedido : ${listPedidos}">
+        <tr>
+          <td>[[${pedido.id}]]</td>
+          <td>[[${pedido.dataPedido}]]</td>
+          <td>[[${pedido.nomeCliente}]]</td>
+          <td>[[${pedido.emailCliente}]]</td>
+          <td>[[${pedido.alunoRa}]]</td>
+          <td>[[${pedido.externoRg}]]</td>
+          <td>[[${pedido.externoCpf}]]</td>
+
+<!--          <td>-->
+<!--            <a class="h4 mr-3 " th:href="@{'/funcionarios/edit/' + ${funcionario.id}}">Edit</a>-->
+<!--            <a class="h4" th:href="@{'/funcionarios/delete/' + ${funcionario.id}}">Delete</a>-->
+<!--          </td>-->
+        </tr>
+
+      </th:block>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+</body>
+</html>

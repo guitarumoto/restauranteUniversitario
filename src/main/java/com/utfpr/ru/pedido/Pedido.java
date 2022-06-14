@@ -30,7 +30,7 @@ public class Pedido {
     private Integer externoRg;
 
     @Column(nullable = false, unique = true, length = 45)
-    private String clienteEmail;
+    private String emailCliente;
 
 
     public Integer getId() {
@@ -89,11 +89,11 @@ public class Pedido {
         this.externoRg = externoRg;
     }
 
-    public String getClienteEmail() {
-        return clienteEmail;
+    public String getEmailCliente() {
+        return emailCliente;
     }
 
-    public void setClienteEmail(String clienteEmail) {
-        this.clienteEmail = clienteEmail;
+    public void setEmailCliente(String emailCliente) {
+        this.emailCliente = emailCliente;
     }
 }

@@ -22,14 +22,17 @@ public class PedidoService {
         repo.save(pedido);
     }
 
+    public List<Pedido> listAllPedidos(){
+        return (List<Pedido>) repo.findAll();
+    }
 
-    public List<Externo> listAll(){
+    public List<Externo> listAllExternos(){
         return (List<Externo>) extRepo.findAll();
     }
 
     public Pedido cpfVerification(Pedido pedido){
         Pedido pedidoExterno = new Pedido();
-        List<Externo> allExternos = listAll();
+        List<Externo> allExternos = listAllExternos();
         for (Externo ext : allExternos){
             if(ext.getCpf().equals(pedido.getExternoCpf())){
                 pedidoExterno.setClienteId(ext.getId());

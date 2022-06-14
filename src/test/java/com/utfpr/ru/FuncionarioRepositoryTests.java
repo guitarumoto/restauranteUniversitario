@@ -23,7 +23,7 @@ public class FuncionarioRepositoryTests {
         Funcionario funcionario = new Funcionario();
         funcionario.setEmail("guitarumoto@gmail.coma");
         funcionario.setNome("Guilherme Tarumoto");
-        funcionario.setLogin("tarumotoa");
+        funcionario.setLogin("tarumoto");
         funcionario.setSenha("12345");
 
         Funcionario savedEmployee = repo.save(funcionario);

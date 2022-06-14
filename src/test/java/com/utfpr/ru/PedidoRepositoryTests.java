@@ -31,6 +31,7 @@ public class PedidoRepositoryTests {
         pedido.setNomeCliente("Guilherme Tarumoto");
         pedido.setExternoCpf(213123);
         pedido.setExternoRg(2312034);
+        pedido.setEmailCliente("guitarumoto@gmail.com");
 
         Pedido savedPedido = repo.save(pedido);
         Assertions.assertThat(savedPedido).isNotNull();

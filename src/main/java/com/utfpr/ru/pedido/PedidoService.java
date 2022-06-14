@@ -27,13 +27,14 @@ public class PedidoService {
         return (List<Externo>) extRepo.findAll();
     }
 
-    public boolean cpfVerification(Externo externo){
+    public Pedido cpfVerification(Pedido pedido){
+        Pedido pedidoExterno = new Pedido();
         List<Externo> allExternos = listAll();
         for (Externo ext : allExternos){
-            if(ext.getCpf().equals(externo.getCpf())){
-                return true;
+            if(ext.getCpf().equals(pedido.getExternoCpf())){
+                pedidoExterno.setClienteId(ext.getId());
             }
         }
-        return false;
+        return pedidoExterno;
     }
 }

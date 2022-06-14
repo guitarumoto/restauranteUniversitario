@@ -29,6 +29,9 @@ public class Pedido {
     @Column(nullable = false, unique = true, length = 15)
     private Integer externoRg;
 
+    @Column(nullable = false, unique = true, length = 45)
+    private String clienteEmail;
+
 
     public Integer getId() {
         return id;
@@ -84,5 +87,13 @@ public class Pedido {
 
     public void setExternoRg(Integer externoRg) {
         this.externoRg = externoRg;
+    }
+
+    public String getClienteEmail() {
+        return clienteEmail;
+    }
+
+    public void setClienteEmail(String clienteEmail) {
+        this.clienteEmail = clienteEmail;
     }
 }

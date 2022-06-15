@@ -19,7 +19,7 @@ public class FuncionarioRepositoryTests {
     private FuncionarioRepository repo;
 
     @Test
-    public void testAddNewEmployee(){
+    public void testAddNewFuncionario(){
         Funcionario funcionario = new Funcionario();
         funcionario.setEmail("guitarumoto@gmail.coma");
         funcionario.setNome("Guilherme Tarumoto");

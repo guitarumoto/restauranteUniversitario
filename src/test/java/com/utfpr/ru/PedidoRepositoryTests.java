@@ -11,6 +11,8 @@ import org.springframework.test.annotation.Rollback;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Optional;
 
@@ -24,9 +26,7 @@ public class PedidoRepositoryTests {
     @Test
     public void testAddPedidoExterno() throws ParseException {
         Pedido pedido = new Pedido();
-        String sDate1="31/12/1998";
-        Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
-        pedido.setDataPedido(date1);
+        pedido.setDataPedido(java.time.LocalDateTime.now());
         pedido.setClienteId(2);
         pedido.setNomeCliente("Guilherme Tarumoto");
         pedido.setExternoCpf(213123);

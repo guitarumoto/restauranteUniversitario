@@ -2,6 +2,7 @@ package com.utfpr.ru.pedido;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -12,7 +13,7 @@ public class Pedido {
     private Integer id;
 
     @Column(nullable = false)
-    private Date dataPedido;
+    private LocalDateTime dataPedido;
 
     @Column(nullable = false)
     private Integer clienteId;
@@ -29,7 +30,7 @@ public class Pedido {
     @Column(nullable = false, unique = true, length = 15)
     private Integer externoRg;
 
-    @Column(nullable = false, unique = true, length = 45)
+    @Column(nullable = false, length = 45)
     private String emailCliente;
 
 
@@ -41,13 +42,6 @@ public class Pedido {
         this.id = id;
     }
 
-    public Date getDataPedido() {
-        return dataPedido;
-    }
-
-    public void setDataPedido(Date dataPedido) {
-        this.dataPedido = dataPedido;
-    }
 
     public Integer getClienteId() {
         return clienteId;
@@ -95,5 +89,13 @@ public class Pedido {
 
     public void setEmailCliente(String emailCliente) {
         this.emailCliente = emailCliente;
+    }
+
+    public LocalDateTime getDataPedido() {
+        return dataPedido;
+    }
+
+    public void setDataPedido(LocalDateTime dataPedido) {
+        this.dataPedido = dataPedido;
     }
 }

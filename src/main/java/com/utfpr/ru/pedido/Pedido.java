@@ -21,13 +21,13 @@ public class Pedido {
     @Column(length = 45, nullable = false)
     private String nomeCliente;
 
-    @Column(nullable = true, unique = true, length = 15)
+    @Column(nullable = true, length = 15)
     private Integer alunoRa;
 
-    @Column(nullable = false, unique = true, length = 15)
+    @Column(nullable = true, unique = true, length = 15)
     private Integer externoCpf;
 
-    @Column(nullable = false, unique = true, length = 15)
+    @Column(nullable = true, unique = true, length = 15)
     private Integer externoRg;
 
     @Column(nullable = false, length = 45)

@@ -36,6 +36,9 @@ public class PedidoService {
         for (Externo ext : allExternos){
             if(ext.getCpf().equals(pedido.getExternoCpf())){
                 pedidoExterno.setClienteId(ext.getId());
+                pedidoExterno.setNomeCliente(ext.getNome());
+                pedidoExterno.setExternoRg(ext.getRg());
+                pedidoExterno.setEmailCliente(ext.getEmail());
             }
         }
         return pedidoExterno;

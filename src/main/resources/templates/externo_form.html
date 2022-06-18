@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${pageTitle}]]</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div th:insert="navbar :: navbar">  </div>
+<div class="container-fluid">
+    <div class="text-center"><h2>[[${pageTitle}]]</h2></div>
+
+    <form th:action="@{/newExterno/save}" method="post" th:object="${externo}" style="max-witdth: 500px; margin: 0 auto;">
+        <div class="border border-secondary rounded p-3">
+            <div class="form-group-row">
+                <label class="col-sm-4 col-form-label">Nome:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{nome}" class="form-control" required minlength="2" maxlength="45"/>
+                </div>
+            </div>
+            <div class="form-group-row">
+                <label class="col-sm-4 col-form-label">Email:</label>
+                <div class="col-sm-8">
+                    <input type="email" th:field="*{email}" class="form-control" required minlength="2" maxlength="45"/>
+                </div>
+            </div>
+            <div class="form-group-row">
+                <label class="col-sm-4 col-form-label">RG:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{rg}" class="form-control" required minlength="1" maxlength="15"/>
+                </div>
+            </div>
+            <div class="form-group-row">
+                <label class="col-sm-4 col-form-label">CPF:</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{cpf}" class="form-control" required minlength="1" maxlength="15"/>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary m-2">Save</button>
+                <button type="submit" class="btn btn-secondary m-2" onCLick="cancelForm()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+        function cancelForm() {
+            window.location = "[[@{/pedidos}]]"
+        }
+    </script>
+</body>
+</html>

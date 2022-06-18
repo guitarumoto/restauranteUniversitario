@@ -58,23 +58,26 @@ public class PedidoController {
         pedido.setClienteId(pedidoExterno.getClienteId());
         if(pedidoExterno.getClienteId() != null){
             pedido.setClienteId(pedidoExterno.getClienteId());
+            pedido.setNomeCliente(pedidoExterno.getNomeCliente());
+            pedido.setEmailCliente(pedidoExterno.getEmailCliente());
+            pedido.setExternoRg(pedidoExterno.getExternoRg());
             pedido.setDataPedido(java.time.LocalDateTime.now());
             service.save(pedido);
+            ra.addFlashAttribute("message", "O pedido foi adicionado com sucesso");
+            return "redirect:/pedidos";
         }
         else{
-            Externo externo = new Externo();
-            externo.setEmail(pedido.getEmailCliente());
-            externo.setNome(pedido.getNomeCliente());
-            externo.setCpf(pedido.getExternoCpf());
-            externo.setRg(pedido.getExternoRg());
-            controllerExterno.saveExterno(externo);
-            pedido.setDataPedido(java.time.LocalDateTime.now());
-            pedido.setClienteId(externo.getId());
-            service.save(pedido);
+            return "redirect:/externo/new";
+//            Externo externo = new Externo();
+//            externo.setEmail(pedido.getEmailCliente());
+//            externo.setNome(pedido.getNomeCliente());
+//            externo.setCpf(pedido.getExternoCpf());
+//            externo.setRg(pedido.getExternoRg());
+//            controllerExterno.saveExterno(externo);
+//            pedido.setDataPedido(java.time.LocalDateTime.now());
+//            pedido.setClienteId(externo.getId());
+//            service.save(pedido);
         }
-        ra.addFlashAttribute("message", "O pedido foi adicionado com sucesso");
-
-        return "redirect:/pedidos";
     }
 
     @GetMapping("/pedidos")

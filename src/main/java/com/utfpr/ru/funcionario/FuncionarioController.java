@@ -26,6 +26,11 @@ public class FuncionarioController {
         return "login";
     }
 
+    @GetMapping("/funcionarios/logout")
+    public String logoutFuncionario(Funcionario funcionario, RedirectAttributes ra){
+        return "login";
+    }
+
 
     @GetMapping("/funcionarios")
     public String showFuncionarioList(Model model){
